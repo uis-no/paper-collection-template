@@ -1,0 +1,63 @@
+\documentclass[12pt,done,hyperref]{uisthesis}
+\input{docsetup}
+\input{preamble}
+
+\author{Your Name Here}
+\title{Some nice title}
+
+\addbibresource{thesis.bib}
+
+\begin{document}
+\titlepage
+\input{copyright}
+
+\inputpreface
+\tableofcontents
+
+%%% List of papers and the contribution
+\listofpapers
+\input{contrib}
+
+%%% Introduction
+\inputintroduction
+
+%%%%% Paper I
+\suppressinput
+\begin{paper}{Testing Robot Controllers Using Constraint Programming
+ and Continuous Integration.}
+  \label{paper:1}
+  \paperauthor{M. Mossige}{1,3}
+  \paperauthor{A. Gotlieb}{2}
+  \paperauthor{H. Meling}{3}
+  \published{Published in the journal of Information and Software Technology, 2015}
+  \institute{\abb}{\abbaddr}
+  \institute{\simula}{\simulaaddr}
+  \institute{\ide}{\ideaddr}
+\end{paper}
+
+%%% Paper II
+\begin{paper}{Using Constraint Programming to Test Paint Control System for Robots}
+  \label{paper:2}
+  \paperauthor{M. Mossige}{1,3}
+  \paperauthor{A. Gotlieb}{2}
+  \paperauthor{H. Meling}{3}
+  \published{Submitted to the Constraints journal.}
+  \institute{\abb}{\abbaddr}
+  \institute{\simula}{\simulaaddr}
+  \institute{\ide}{\ideaddr}
+\end{paper}
+
+%%%%% Paper III
+\begin{paper}{Optimal Test Execution Scheduling on Multiple Machines
+ with Resource Constraints}
+  \label{paper:3}
+  \paperauthor{M. Mossige}{1,3}
+  \paperauthor{A. Gotlieb}{2}
+  \paperauthor{H. Meling}{3}
+  \published{Submitted to ISSTA 2015.}
+  \institute{\abb}{\abbaddr}
+  \institute{\simula}{\simulaaddr}
+  \institute{\ide}{\ideaddr}
+\end{paper}
+
+\end{document}

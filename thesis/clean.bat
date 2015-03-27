@@ -1,0 +1,12 @@
+del *.aux
+del *.bbl
+del *.blg
+del *.log
+del *.synctex
+del thesis.pdf
+del *.out
+del *.toc
+del *.lop
+del *.run.xml
+del *.bcf          
+del *.tdo
