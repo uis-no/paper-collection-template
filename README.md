@@ -54,7 +54,7 @@ independent:
 
 ##Specific Thesis Commands:
 
-```
+```latex
 \thesisbibliography   Defines a global bibliography file. By default local 
                       bibliography files are used.
 
