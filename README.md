@@ -1,14 +1,12 @@
 #Paper Collection Template for PhD Thesis
 
 In this folder you will find the `uisthesis.cls` paper collection thesis
-template for the University of Stavanger.
+template for the University of Stavanger. The template is based on
+`book.cls`, and it was adapted for UiS by Morten Mossige and Hein Meling,
+2015, based on a template for University of Oslo.
+
 
 #Documentation
-Class for writing a UiS PhD thesis, based on book.cls.
-Adapted for UiS by Morten Mossige and Hein Meling, 2015.
-Original version by Johan Hake, Oslo, 2009.
-Based on previous work by Hans E. Plesser and Martin Alnæs.
-
 Construct a thesis.tex file that uses this class along with the following
 directory structure. All files in [] are optional; instead you can define
 a global bibliography file, see below. The number of included papers is
@@ -171,7 +169,7 @@ Or on Windows:
 ##License
 
  Copyright (C) 2015 Morten Mossige, Hein Meling.
- Copyright (C) 2009 Johan Hake, Hans Eckhard Plesser.
+ Copyright (C) 2009 Johan Hake, Hans Eckhard Plesser, Martin Alnæs.
 
  This program is free software; you can redistribute it and/or
  modify it under the terms of the GNU General Public License
