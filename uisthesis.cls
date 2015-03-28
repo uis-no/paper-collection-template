@@ -44,6 +44,7 @@
 %     showhead     display some info in the header
 %     nofigures    turn off figures 
 %     hyperref     activate hyperref
+%     drphilos     only if you are doing Dr. Philos (not PhD)
 %
 %
 %  SPECIFIC THESIS COMMANDS:
@@ -204,6 +205,10 @@
                        \def\thesis@labels{HIDE}
                        \def\thesis@comments{HIDE}}
 
+\def\thesis@degree{PHD}
+% Pass this option if you are doing a Dr. Philos; default is PhD
+\DeclareOption{drphilos}{\def\thesis@degree{DRPHILOS}}
+
 % \labels, \thinks, \rems are switched independent of layout option
 \DeclareOption{showtags}{\def\thesis@labels{SHOW}
                          \def\thesis@comments{SHOW}}
@@ -310,6 +315,9 @@
     \renewcommand{\baselinestretch}{1.5}
   }
 
+\ifthenelse{\equal{\thesis@degree}{DRPHILOS}}
+{\def\thedegree{DOCTOR PHILOSOPHIAE (Dr. Philos.)}}
+{\def\thedegree{PHILOSOPHIAE DOCTOR (PhD)}}
 
 % minor changes to tables
 \setlength{\extrarowheight}{2pt}
@@ -332,6 +340,8 @@
 \def\thesis@thesisno{NOTSET}%
 \def\thesis@isbn{NOTSET}%
 \def\thesis@issn{NOTSET}%
+\def\thesis@faculty{NOTSET}%
+\def\thesis@department{NOTSET}%
 
 \renewcommand{\title}[2][NOTSET]{\gdef\@title{#2}\def\thesis@title{#2}%
                                   \ifthenelse{\equal{#1}{NOTSET}}%
@@ -355,6 +365,10 @@
 \newcommand{\theisbn}{\thesis@isbn}
 \newcommand{\issn}[1]{\gdef\@issn{#1}\def\thesis@issn{#1}}
 \newcommand{\theissn}{\thesis@issn}
+\newcommand{\faculty}[1]{\gdef\@faculty{#1}\def\thesis@faculty{#1}}
+\newcommand{\thefaculty}{\thesis@faculty}
+\newcommand{\department}[1]{\gdef\@department{#1}\def\thesis@department{#1}}
+\newcommand{\thedepartment}{\thesis@department}
 
 %%% Reset the counters
 \newcommand\resetcounters{\par
@@ -571,7 +585,7 @@
 {
 \centerline{\small A dissertation submitted in partial satisfaction of}
 \centerline{\small the requirements for the degree}
-\centerline{\small PHILOSOPHIAE DOCTOR}
+\centerline{\small \thedegree}
 }
 \vspace{3.5cm}
 \begin{figure}[h!]
@@ -579,8 +593,8 @@
 \includegraphics[scale=0.7]{uis-logo-en}
 \end{figure}
 \vspace{1.0cm}
-\centerline{Faculty of Science and Technology} 
-\centerline{Department of Electrical Engineering and Computer Science} 
+\centerline{\thefaculty} 
+\centerline{\thedepartment} 
 \centerline{\shortdate} 
 \clearpage
 }

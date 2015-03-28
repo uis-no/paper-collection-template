@@ -98,6 +98,7 @@ independent:
    showhead     display some info in the header
    nofigures    turn off figures 
    hyperref     activate hyperref
+   drphilos     only if you are doing Dr. Philos (not PhD)
 ```
 
 
