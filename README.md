@@ -47,6 +47,19 @@ src/
 To compile your thesis (on a proper operating system):
 
 ```sh
+  latexmk -pdf thesis
+```
+
+To clean up (deletes generated files, except `.pdf`):
+
+```sh
+  latexmk -c
+  rm -rf `biber --cache`
+```
+
+Or you can also do:
+
+```sh
   pdflatex thesis
   biber thesis
   pdflatex thesis
@@ -54,7 +67,9 @@ To compile your thesis (on a proper operating system):
 ```
 
 **Note:** The template uses the `biblatex` package along with the `biber`
-tool to compile multiple *Reference* sections.
+tool to compile multiple *Reference* sections. Note also that the template
+is design to generate pdf only, and hence the `-pdf` option to `latexmk`
+is required.
 
 Or on Windows:
 
