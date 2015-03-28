@@ -1,9 +1,17 @@
 #Paper Collection Template for PhD Thesis
-
 In this folder you will find the `uisthesis.cls` paper collection thesis
 template for the University of Stavanger. The template is based on
 `book.cls`, and it was adapted for UiS by Morten Mossige and Hein Meling,
 2015, based on a template for University of Oslo.
+
+
+#Contributing
+LaTeX templates are never finished. If you make a change to the template
+or structure, or add some new feature. And of course, if you remove an
+obsolete feature: submit the change as a Pull request. 
+
+If you have a request for a feature or have found a bug/issue, then you
+can report this as an Issue on Github.
 
 
 #Documentation
