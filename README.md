@@ -119,17 +119,22 @@ The paper environment consist of the following options:
 To compile your thesis (on a proper operating system):
 
 ```sh
+  pdflatex thesis
   biber thesis
   pdflatex thesis
+  pdflatex thesis
 ```
+
+**Note:** The template uses the `biblatex` package along with the `biber`
+tool to compile multiple *Reference* sections.
 
 Or on Windows:
 
 ```bat
-  biber thesis
   "C:\Program Files (x86)\MiKTeX 2.9\miktex\bin\texify.exe"
      --pdf --tex-option=-synctex=-1 --tex-option=-shell-escape
      --run-viewer "thesis.tex"
+  biber thesis
 ```
 
 
@@ -165,8 +170,8 @@ Or on Windows:
 
 ##License
 
- Copyright (C) 2015 Morten Mossige, Hein Meling
- Copyright (C) 2009 Johan Hake, Hans Eckhard Plesser
+ Copyright (C) 2015 Morten Mossige, Hein Meling.
+ Copyright (C) 2009 Johan Hake, Hans Eckhard Plesser.
 
  This program is free software; you can redistribute it and/or
  modify it under the terms of the GNU General Public License
