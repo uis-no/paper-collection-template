@@ -42,6 +42,30 @@ src/
 ```
 
 
+##Compiling
+
+To compile your thesis (on a proper operating system):
+
+```sh
+  pdflatex thesis
+  biber thesis
+  pdflatex thesis
+  pdflatex thesis
+```
+
+**Note:** The template uses the `biblatex` package along with the `biber`
+tool to compile multiple *Reference* sections.
+
+Or on Windows:
+
+```bat
+  "C:\Program Files (x86)\MiKTeX 2.9\miktex\bin\texify.exe"
+     --pdf --tex-option=-synctex=-1 --tex-option=-shell-escape
+     --run-viewer "thesis.tex"
+  biber thesis
+```
+
+
 ##Class Options:
 
 ```
@@ -121,30 +145,6 @@ The paper environment consist of the following options:
 
 \nobibliography       Issue this command before a paper environment
                       to suppress errors due to missing bibliography.
-```
-
-
-##Compiling
-
-To compile your thesis (on a proper operating system):
-
-```sh
-  pdflatex thesis
-  biber thesis
-  pdflatex thesis
-  pdflatex thesis
-```
-
-**Note:** The template uses the `biblatex` package along with the `biber`
-tool to compile multiple *Reference* sections.
-
-Or on Windows:
-
-```bat
-  "C:\Program Files (x86)\MiKTeX 2.9\miktex\bin\texify.exe"
-     --pdf --tex-option=-synctex=-1 --tex-option=-shell-escape
-     --run-viewer "thesis.tex"
-  biber thesis
 ```
 
 
