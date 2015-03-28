@@ -1,6 +1,183 @@
-#Templates for thesis
+#Paper Collection Template for PhD Thesis
 
-In this folder you will find thesis templates for the University of Stavanger.
+In this folder you will find the `uisthesis.cls` paper collection thesis
+template for the University of Stavanger.
 
-Current we only have a template for paper collection-based PhD thesis.
+#Documentation
+Class for writing a UiS PhD thesis, based on book.cls.
+Adapted for UiS by Morten Mossige and Hein Meling, 2015.
+Original version by Johan Hake, Oslo, 2009.
+Based on previous work by Hans E. Plesser and Martin Alnæs.
 
+Construct a thesis.tex file that uses this class along with the following
+directory structure. All files in [] are optional; instead you can define
+a global bibliography file, see below. The number of included papers is
+flexible; we use 3 here.
+
+##Directory Structure
+```
+src/
+  thesis.tex
+  preface.tex
+  introduction/
+    body.tex
+   [bibliography.bib]
+   [graphics/]
+      [pictures.pdf]
+  paperI/
+    body.tex
+   [bibliography.bib]
+  paperII/
+    body.tex
+   [bibliography.bib]
+  paperIII/
+    body.tex
+   [bibliography.bib]
+```
+
+
+##Class Options:
+
+```
+alternative (choose only one):
+   done         final thing
+   layout       final, but black boxes for overwide lines
+   date         final, but with date
+   proof        wide margins, line skips, date
+
+independent: 
+   showtags     show \label's, \rem's and \think's
+   showcomments show only \rem's and \think's
+   showhead     display some info in the header
+   nofigures    turn off figures 
+   hyperref     activate hyperref
+```
+
+
+##Specific Thesis Commands:
+
+```
+\thesisbibliography   Defines a global bibliography file. By default local 
+                      bibliography files are used.
+
+\defaultbibliographystyle 
+                      Defines a global bibliography style.
+                      If \bibliographystyle is called inside a body.tex this
+                      will be used locally. The class is using biblatex with
+                      the biber as the backend.
+
+\titlepage            Insert a titlepage, with UiS specific information.
+
+\inputpreface         Call this to import the content of preface.tex.
+                      A special preface chapter will be created.
+
+\tableofcontents      Insert table of contents and clear a double page.
+
+\listofpapers         Insert the list of papers, added through the paper
+                      environment.
+                    
+\inputintroduction    Import the introduction. Reads body.tex from the 
+                      introduction folder. Includes in this files is
+                      relative to the introduction folder (using import).
+```
+
+
+The paper environment consist of the following options:
+
+```latex
+\begin{paper}{Paper title}
+  \paperauthor{Author One}{1}
+  \paperauthor{Author Two}{1,2}
+  \published{Where the paper is (going to be) published}
+  \institute{The name of institute 1}{The address to institute 1}
+  \institute{The name of institute 2}{The address to institute 2}
+\end{paper}
+```
+
+```
+\paperauthor          Add author to the paper. The authors are added in the
+                      order they should appear. The second argument points
+                      to the institution of the author.
+
+\published            Where is the paper (going to be) published.
+
+\institute            The department of the authors. The order of these
+                      definitions must correspond to the numbers specified
+                      in \paperauthor command.
+
+\suppressinput        Placed before \inputintroduction, or a paper 
+                      environment to suppress the import of the relevant 
+                      body.tex file.
+
+\nobibliography       Issue this command before a paper environment
+                      to suppress errors due to missing bibliography.
+```
+
+
+##Compiling
+
+To compile your thesis (on a proper operating system):
+
+```sh
+  biber thesis
+  pdflatex thesis
+```
+
+Or on Windows:
+
+```bat
+  biber thesis
+  "C:\Program Files (x86)\MiKTeX 2.9\miktex\bin\texify.exe"
+     --pdf --tex-option=-synctex=-1 --tex-option=-shell-escape
+     --run-viewer "thesis.tex"
+```
+
+
+##Miscellaneous Commands:
+
+```
+\nextfloatevenpage    Place next float on an even page (hope so ...)
+
+\continuecaption[]{}  If caption is too long for one page, remainder can be
+                      placed at bottom of following page like a footnote;
+                      Must be placed IMMEDIATELY after \end{figure}.
+                      Optional arguments see \rightcaption.
+
+\rightcaption[]{}     Create a figure caption without creating an entry in
+                      the list of figures or advancing the figure counter.
+                      Figure number will be that of preceeding figure.
+                      If optional entry is missing, caption begins with 
+                          Figure X.XX(continued):
+                      otherwise with
+                          Figure X.XX#1:
+
+\rem{}                put remark on margin, with showtags only
+
+\think{}              put longer, boxed remark in middle of text,
+                      with showtags only
+
+\longpage             lengthen/shorten page by
+\shortpage             +-\baselineskip
+
+\forcehyperanchor     hyperref does not notice References, this
+                      command forces recognition
+```
+
+##License
+
+ Copyright (C) 2015 Morten Mossige, Hein Meling
+ Copyright (C) 2009 Johan Hake, Hans Eckhard Plesser
+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License
+ as published by the Free Software Foundation; either version 2
+ of the License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.

@@ -4,7 +4,7 @@
 %  Class for writing a UiS PhD thesis, based on book.cls
 %  Adapted for UiS by Morten Mossige and Hein Meling, 2015.
 %  Original version by Johan Hake, Oslo, 2009 
-%  Based on previuos work by Hans E. Plesser and Martin Alnæs.
+%  Based on previous work by Hans E. Plesser and Martin Alnæs.
 %
 %  Construct a thesis.tex file that uses this class along with the following
 %  directory structure. All files in [] are optional; instead you can define
@@ -83,7 +83,7 @@
 %
 %  \paperauthor          Add author to the paper. The authors are added in the
 %                        order they should appear. The second argument points
-%                        to the insitution of the author.
+%                        to the institution of the author.
 %
 %  \published            Where is the paper (going to be) published.
 %
