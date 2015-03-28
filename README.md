@@ -50,13 +50,6 @@ To compile your thesis (on a proper operating system):
   latexmk -pdf thesis
 ```
 
-To clean up (deletes generated files, except `.pdf`):
-
-```sh
-  latexmk -c
-  rm -rf `biber --cache`
-```
-
 Or you can also do:
 
 ```sh
@@ -66,10 +59,19 @@ Or you can also do:
   pdflatex thesis
 ```
 
+To clean up (deletes generated files, except `.pdf`):
+
+```sh
+  latexmk -c
+  rm -rf `biber --cache`
+```
+
 **Note:** The template uses the `biblatex` package along with the `biber`
 tool to compile multiple *Reference* sections. Note also that the template
 is design to generate pdf only, and hence the `-pdf` option to `latexmk`
-is required.
+is required. Finally, deleting the biber cache is only necessary if you
+get an error message regarding missing `recode_data.xml`.
+See [this link](http://tex.stackexchange.com/questions/140814/biblatex-biber-fails-with-a-strange-error-about-missing-recode-data-xml-file) for details.
 
 Or on Windows:
 
