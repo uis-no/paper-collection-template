@@ -185,7 +185,7 @@
                        \def\thesis@labels{HIDE}
                        \def\thesis@comments{HIDE}}
 
-% Layout control, like dfinal, but black boxes for overwide lines
+% Layout control, like done, but black boxes for overwide lines
 \DeclareOption{layout}{\def\thesis@layout{FINAL}%
                         \def\thesis@date{HIDE}%
                         \def\thesis@labels{HIDE}%
@@ -329,6 +329,9 @@
 \def\thesis@author{NOTSET}%
 \def\thesis@shortauthor{NOTSET}%
 \def\thesis@date{NOTSET}%
+\def\thesis@thesisno{NOTSET}%
+\def\thesis@isbn{NOTSET}%
+\def\thesis@issn{NOTSET}%
 
 \renewcommand{\title}[2][NOTSET]{\gdef\@title{#2}\def\thesis@title{#2}%
                                   \ifthenelse{\equal{#1}{NOTSET}}%
@@ -344,6 +347,14 @@
 \newcommand{\thethesisauthor}{\thesis@author}
 \newcommand{\theshorttitle}{\thesis@shorttitle}
 \newcommand{\thethesisshortauthor}{\thesis@shortauthor}
+
+%%% Commands to aquire thesis number, isbn, and issn
+\newcommand{\thesisno}[1]{\gdef\@thesisno{#1}\def\thesis@thesisno{#1}}
+\newcommand{\thethesisno}{\thesis@thesisno}
+\newcommand{\isbn}[1]{\gdef\@isbn{#1}\def\thesis@isbn{#1}}
+\newcommand{\theisbn}{\thesis@isbn}
+\newcommand{\issn}[1]{\gdef\@issn{#1}\def\thesis@issn{#1}}
+\newcommand{\theissn}{\thesis@issn}
 
 %%% Reset the counters
 \newcommand\resetcounters{\par
@@ -525,7 +536,7 @@
   \setboolean{thesis@suppressbibliography}{true}
 }%
 
-
+%TODO(hein): Make these local only; they should not be visible outside this file.
 %%% Macros for setting the the numbering depth for the toc
 \newcommand{\nonumX}{\setcounter{secnumdepth}{-2}}
 \newcommand{\numX}{\setcounter{secnumdepth}{2}}
@@ -573,6 +584,30 @@
 \centerline{\shortdate} 
 \clearpage
 }
+
+%%% Make copyright page
+\newcommand{\copyrightpage}{
+{
+\vspace*{1.0cm}\noindent
+University of Stavanger\\
+N-4036 Stavanger\\
+NORWAY\\
+\url{www.uis.no}\\
+
+\vspace{0.2cm}\noindent
+\copyright\ \thethesisauthor, 2015\\
+All rights reserved.\\
+
+\vspace{0.2cm}\noindent
+ISBN  \theisbn\\
+ISSN  \theissn\\
+
+\vspace{0.2cm}\noindent
+PhD Thesis UiS no. \thethesisno
+}
+\clearpage
+}
+
 
 %%%TODO(hein): continue editing from here
 
