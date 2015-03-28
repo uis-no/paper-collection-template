@@ -64,7 +64,11 @@ independent:
                       will be used locally. The class is using biblatex with
                       the biber as the backend.
 
-\titlepage            Insert a titlepage, with UiS specific information.
+\titlepage            Insert a title page, with UiS specific information.
+
+\copyrightpage        Insert a copyright page, with UiS specific information.
+                      ISBN, ISSN, and thesis no. will be given to you in the
+                      final stages before you submit your thesis.
 
 \inputpreface         Call this to import the content of preface.tex.
                       A special preface chapter will be created.
@@ -73,7 +77,7 @@ independent:
 
 \listofpapers         Insert the list of papers, added through the paper
                       environment.
-                    
+
 \inputintroduction    Import the introduction. Reads body.tex from the 
                       introduction folder. Includes in this files is
                       relative to the introduction folder (using import).
@@ -92,7 +96,7 @@ The paper environment consist of the following options:
 \end{paper}
 ```
 
-```
+```latex
 \paperauthor          Add author to the paper. The authors are added in the
                       order they should appear. The second argument points
                       to the institution of the author.
@@ -138,7 +142,7 @@ Or on Windows:
 
 ##Miscellaneous Commands:
 
-```
+```latex
 \nextfloatevenpage    Place next float on an even page (hope so ...)
 
 \continuecaption[]{}  If caption is too long for one page, remainder can be
