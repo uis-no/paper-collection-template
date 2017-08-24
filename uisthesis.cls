@@ -306,7 +306,7 @@
   {
     %% \setmarginsrb{leftmargin}{topmargin}{rightmargin}{bottommargin}%
     %% {headheight}{headsep}{footheight}{footskip}
-    \setmarginsrb{3.0cm}{2.5cm}{2.5cm}{2.5cm}{15pt}{15pt}{15pt}{25pt}
+    \setmarginsrb{44mm}{40mm}{44mm}{46mm}{3mm}{9mm}{12pt}{12mm}
     \setlength{\marginparwidth}{20mm}
   }
   {
