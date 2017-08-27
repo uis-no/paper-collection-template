@@ -573,7 +573,7 @@
 %%% Make title page 
 \renewcommand{\titlepage}{
 \thispagestyle{empty}
-\vspace*{2.5cm}
+\vspace*{5.5cm}
 \begin{center}
 \Large{\textbf{\thetitle}}
 \end{center}
@@ -581,21 +581,20 @@
 \centerline{by}
 \vspace{0.5cm}
 \centerline{\large{\textbf{\thethesisauthor}}}
-\vspace{2cm}
+\vspace{5.2cm}
 {
 \centerline{\small A dissertation submitted in partial satisfaction of}
 \centerline{\small the requirements for the degree}
 \centerline{\small \thedegree}
 }
-\vspace{3.5cm}
+\vspace{1.4cm}
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.7]{uis-logo-en}
 \end{figure}
-\vspace{1.0cm}
 \centerline{\thefaculty} 
 \centerline{\thedepartment} 
-\centerline{\shortdate} 
+\centerline{\the\year} 
 \clearpage
 }
 
