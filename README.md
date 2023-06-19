@@ -1,11 +1,15 @@
-#Paper Collection Template for PhD Thesis
+# Deprecated - Do not use
+
+This template is no longer being maintained and used. Instead please use the template over at [uis-no/uis-thesis](https://github.com/uis-no/uis-thesis) for your thesis. This repository may be removed in the future without any warning.
+
+## Paper Collection Template for PhD Thesis
 In this folder you will find the `uisthesis.cls` paper collection thesis
 template for the University of Stavanger. The template is based on
 `book.cls`, and it was adapted for UiS by Morten Mossige and Hein Meling,
 2015, based on a template for University of Oslo.
 
 
-#Contributing
+## Contributing
 LaTeX templates are never finished. If you make a change to the template
 or structure, or add some new feature. And of course, if you remove an
 obsolete feature: submit the change as a Pull request. 
@@ -13,14 +17,13 @@ obsolete feature: submit the change as a Pull request.
 If you have a request for a feature or have found a bug/issue, then you
 can report this as an Issue on Github.
 
-
-#Documentation
+## Documentation
 Construct a thesis.tex file that uses this class along with the following
 directory structure. All files in [] are optional; instead you can define
 a global bibliography file, see below. The number of included papers is
 flexible; we use 3 here.
 
-##Directory Structure
+### Directory Structure
 ```
 src/
   thesis.tex
@@ -42,7 +45,7 @@ src/
 ```
 
 
-##Compiling
+### Compiling
 
 To compile your thesis (on a proper operating system):
 
@@ -83,7 +86,7 @@ Or on Windows:
 ```
 
 
-##Class Options:
+### Class Options:
 
 ```
 alternative (choose only one):
@@ -102,7 +105,7 @@ independent:
 ```
 
 
-##Specific Thesis Commands:
+### Specific Thesis Commands:
 
 ```latex
 \thesisbibliography   Defines a global bibliography file. By default local 
@@ -166,7 +169,7 @@ The paper environment consist of the following options:
 ```
 
 
-##Miscellaneous Commands:
+### Miscellaneous Commands:
 
 ```latex
 \nextfloatevenpage    Place next float on an even page (hope so ...)
@@ -196,7 +199,7 @@ The paper environment consist of the following options:
                       command forces recognition
 ```
 
-##License
+### License
 
  Copyright (C) 2015 Morten Mossige, Hein Meling.
  Copyright (C) 2009 Johan Hake, Hans Eckhard Plesser, Martin Alnæs.
